@@ -6,15 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/formStyle.css">
     <title>Title</title>
 </head>
 <body>
-<form method="GET" action="/minor/processForm">
+<h1>O proszę, pan Miller na zdjęciu</h1>
+<form method="GET" action="/minor/goodProcessor">
     <input type="text" name="footballer" placeholder="Wpisz tu coś..."/>
     <input type="submit"/>
 </form>
-    $SECOND_SITE$
+<img src="${pageContext.request.contextPath}/resources/img/miller.jpg">
 </body>
 </html>

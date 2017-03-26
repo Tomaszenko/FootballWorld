@@ -12,8 +12,12 @@
   </head>
   <body>
   $END$
-  <h2>
-    Podany zawodnik: ${param.footballer}
-  </h2>
+  <%--<h2>--%>
+    <%--Podany zawodnik: ${param.footballer}--%>
+  <%--</h2>--%>
+  <h1>
+    Spiker:<br/>
+    ${message}
+  </h1>
   </body>
 </html>
