@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BigController {
 
-    @RequestMapping("/home")
+    //@RequestMapping("/home")
     public String func() {
         System.out.println("kukulele");
         return "index";

@@ -3,6 +3,7 @@ package com.example.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,15 +26,27 @@ public class FormController {
         return "index";
     }
 
+//    jedna wersja
+//    @RequestMapping("/goodProcessor")
+//    public String goodProcessor(HttpServletRequest request, Model model) {
+//
+//        String name=request.getParameter("footballer");
+//
+//        String message=name+", najlepszy napastnik Polski!";
+//
+//        model.addAttribute("message",message);
+//
+//        return "index";
+//    }
+
     @RequestMapping("/goodProcessor")
-    public String goodProcessor(HttpServletRequest request, Model model) {
+    public String goodProcessor(@RequestParam("footballer") String fbName, Model model) {
 
-        String name=request.getParameter("footballer");
-
-        String message=name+", najlepszy napastnik Polski!";
+        String message="Panie i Panowie, "+fbName+", najlepszy napastnik Polski!";
 
         model.addAttribute("message",message);
 
         return "index";
     }
+
 }
