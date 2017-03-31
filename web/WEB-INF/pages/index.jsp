@@ -16,7 +16,6 @@
     <%--Podany zawodnik: ${param.footballer}--%>
   <%--</h2>--%>
   <h1>
-    Spiker:<br/>
     ${message}
   </h1>
   </body>

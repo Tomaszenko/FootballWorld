@@ -11,9 +11,7 @@ public class Footballer {
     public void setAge(Integer age) {
         this.age = age;
     }
-    public Integer getAge() {
-        return age;
-    }
+    public Integer getAge() { return age; }
     public void setName(String name) {
         this.name = name;
     }
