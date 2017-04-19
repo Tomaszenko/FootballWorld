@@ -1,9 +1,9 @@
-package com.example;
+package com.example.models;
 
 /**
  * Created by Tomek on 25.03.2017.
  */
-public class Footballer {
+public class Podopieczny {
     private Integer age;
     private String name;
     private Integer id;

@@ -6,17 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>$Title$</title>
+    <title></title>
   </head>
   <body>
-  $END$
-  <%--<h2>--%>
-    <%--Podany zawodnik: ${param.footballer}--%>
-  <%--</h2>--%>
-  <h1>
-    ${message}
+  <h1>Jestem w indeksie
   </h1>
   </body>
 </html>

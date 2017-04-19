@@ -1,0 +1,16 @@
+.naglowek {
+    background-color: darkolivegreen;
+}
+
+.koordynator {
+    background-color: bisque;
+}
+
+.koordynator:hover {
+    background-color: coral;
+    cursor: pointer;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

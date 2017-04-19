@@ -16,7 +16,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="footballerDao" class="com.example.FootballerDAOImpl">
+    <bean id="podopiecznyDAO" class="com.example.PodopiecznyDAOImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="adminDAO" class="com.example.AdminDAOImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 </beans>

@@ -5,8 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
  * Created by Tomek on 25.03.2017.
  */
@@ -17,7 +15,7 @@ public class FormController {
 
     @RequestMapping("/")
     public String func() {
-        return "site";
+        return "koordynator";
     }
 
     @RequestMapping("/processForm")

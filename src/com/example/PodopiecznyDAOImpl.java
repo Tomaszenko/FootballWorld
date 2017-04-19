@@ -1,10 +1,8 @@
 package com.example;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.models.Podopieczny;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +11,7 @@ import java.sql.SQLException;
  * Created by Tomek on 28.03.2017.
  */
 
-public class FootballerDAOImpl implements FootballerDAO {
+public class PodopiecznyDAOImpl implements PodopiecznyDAO {
     private JdbcTemplate jdbcTemplate;
 
     public JdbcTemplate getJdbcTemplate() {
@@ -26,22 +24,22 @@ public class FootballerDAOImpl implements FootballerDAO {
 
 
     @Override
-    public void saveFootballer(Footballer fb) {
+    public void zapiszPodopiecznego(Podopieczny fb) {
+        jdbcTemplate.update(zapisPacjenta, fb.getName(), fb.getAge());
+    }
+
+    @Override
+    public void uaktualnijPodopiecznego(Podopieczny fb) {
 
     }
 
     @Override
-    public void updateFootballer(Footballer fb) {
-
-    }
-
-    @Override
-    public Footballer getFootballer(int idFtb) {
-        Footballer fbl=(Footballer)jdbcTemplate.queryForObject(this.football_select,
-                new Object[]{new Integer(idFtb)},
+    public Podopieczny pobierzPodopiecznego(int idPacjenta) {
+        Podopieczny fbl=(Podopieczny)jdbcTemplate.queryForObject(this.football_select,
+                new Object[]{new Integer(idPacjenta)},
                 new RowMapper() {
                     public Object mapRow(ResultSet rs, int arg1) throws SQLException{
-                        Footballer ftb=new Footballer();
+                        Podopieczny ftb=new Podopieczny();
                         ftb.setId(rs.getInt("id_ftb"));
                         ftb.setName(rs.getString("name"));
                         ftb.setAge(rs.getInt("age"));
@@ -53,5 +51,6 @@ public class FootballerDAOImpl implements FootballerDAO {
 
     private final String football_select="SELECT * FROM footballer WHERE id_ftb=?";
     private final String footballer_insert="INSERT INTO footballer (id_ftb,name,age) VALUES(?,?,?)";
+    private final String zapisPacjenta="INSERT INTO podopieczny ()";
     //private final String footballer_update="UPDATE footballer SET ";
 }

@@ -13,7 +13,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>O proszę, pan Miller na zdjęciu</h1>
 <form method="GET" action="/minor/goodProcessor">
     <input type="text" name="footballer" placeholder="Wpisz tu coś..."/>
     <input type="submit"/>
