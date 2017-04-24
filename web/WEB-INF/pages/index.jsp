@@ -26,7 +26,7 @@
         </div>
 
         <div id="menu">
-          <a href="index.html"><div class="option">Strona główna</div></a>
+          <a href="${pageContext.request.contextPath}/resources/html/index.html"><div class="option">Strona główna</div></a>
           <a href="${pageContext.request.contextPath}/resources/html/o_nas.html"><div class="option">O nas</div></a>
           <a href="${pageContext.request.contextPath}/resources/html/wolontariusze.html"><div class="option">Wolontariusze</div></a>
           <a href="${pageContext.request.contextPath}/resources/html/podopieczni.html"><div class="option">Podopieczni</div></a>
@@ -49,8 +49,8 @@
         </div>
 
         <div id="sidebar">
-          <a href="index.jsp" style="color: black; text-decoration: none"><div class="optionL">Strona główna</div></a>
-          <a href="../../forms/o_nas.jsp" style="color: black; text-decoration: none"><div class="optionL">O nas</div></a>
+          <a href="index.html" style="color: black; text-decoration: none"><div class="optionL">Strona główna</div></a>
+          <a href="index.html" style="color: black; text-decoration: none"><div class="optionL">O nas</div></a>
           <a href="wolontariusze.html" style="color: black; text-decoration: none"><div class="optionL">Wolontariusze</div></a>
           <a href="podopieczni.html" style="color: black; text-decoration: none"><div class="optionL">Podopieczni</div></a>
           <a href="kontakt.html" style="color: black; text-decoration: none"><div class="optionL">Kontakt</div></a>
