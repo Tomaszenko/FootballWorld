@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin_koordynatorzy_zarzadzanie/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/formStyle.css">
     <script src=${pageContext.request.contextPath}/resources/js/admin_koordynatorzy_zarzadzanie/skrypt.js"></script>
 </head>
 <body>
