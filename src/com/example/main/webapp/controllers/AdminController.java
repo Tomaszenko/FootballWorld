@@ -1,17 +1,19 @@
-package com.example.controllers;
+package com.example.main.webapp.controllers;
 
-import com.example.AdminDAO;
-import com.example.forms.KoordynatorWybor;
-import com.example.models.Koordynator;
+import com.example.main.webapp.AdminDAO;
+import com.example.main.webapp.forms.KoordynatorWybor;
+import com.example.main.webapp.models.Koordynator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Tomek on 07.04.2017.
@@ -39,17 +41,22 @@ public class AdminController {
             return "adminlogin";
     }
 
-    @RequestMapping(value = "/koordynatorzy", method = RequestMethod.POST)
+    @InitBinder
+    public void initBinder(WebDataBinder webDataBinder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        dateFormat.setLenient(false);
+        webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+    }
+
+    @RequestMapping(value = "/koordynatorzy")
     public String adminPodgladKoordynatorow(/*@RequestParam(value="Koordynator")Optional<Koordynator> koordynator,*/ Model model) {
 //        if(koordynator.isPresent())
 //            dao.usunKoordynatora(koordynator.get());
 
         ArrayList<Koordynator> koordynatory=dao.pobierzKoordynatorow();
         for(Koordynator koord: koordynatory) {
-            System.out.println(koord.getImie()+" "+koord.getNazwisko());
+            System.out.println(koord.getImie() + " " + koord.getNazwisko());
         }
-
-
         model.addAttribute("koordynatorzy", koordynatory);
         model.addAttribute("koordynator_edycja", new KoordynatorWybor());
         model.addAttribute("koordynator_usuniecie", new KoordynatorWybor());
@@ -57,8 +64,17 @@ public class AdminController {
     }
 
     @RequestMapping(value="/koordynatorzy/edycja", method = RequestMethod.POST)
-    public String adminEdycjaKoordynatora(@ModelAttribute("koordynator_edycja") KoordynatorWybor koordynatorwyb, Model model) {
-        model.addAttribute("koordynator", koordynatorwyb.getKoordynator());
+    public String adminEdycjaKoordynatora(@RequestParam("idkoord") int id_koordynatora, Model model) {
+        System.out.println("W WIDOKU"+id_koordynatora);
+        Koordynator koord=dao.pobierzKoordynatora(id_koordynatora);
+        model.addAttribute("koordynator", koord);
         return "admin_koordynator_edycja";
+    }
+
+    @RequestMapping(value="/koordynatorzy/zmiana", method = RequestMethod.POST)
+    public RedirectView adminZmianaKoordynatora(@ModelAttribute("koordynator") Koordynator koord, Model model) {
+        System.out.println("W WIDOKU PRZED AKTUALIZACJĄ"+koord.getIdKoordynatora());
+        dao.uaktualnijKoordynatora(koord);
+        return new RedirectView("/admin/koordynatorzy");
     }
 }

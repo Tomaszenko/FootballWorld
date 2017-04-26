@@ -18,29 +18,29 @@
     <table>
         <thead>
             <tr class="naglowek">
-                <th>Imię</th><th>Nazwisko</th><th>Data urodzenia</th><th>Data szkolenia</th><th>Telefon</th><th>Miasto</th><th>Ulica</th>
+                <th>Id</th><th>Imię</th><th>Nazwisko</th><th>Telefon</th><th>Miasto</th>
             </tr>
         </thead>
         <tbody>
         <c:forEach var="koordynator" items="${koordynatorzy}">
             <tr class="koordynator">
+                <td>${koordynator.idKoordynatora}</td>
                 <td>${koordynator.imie}</td>
                 <td>${koordynator.nazwisko}</td>
-                <td>${koordynator.data_urodzenia.toString("YYYY-MM-dd")}</td>
-                <td>${koordynator.data_szkolenia.toString("YYYY-MM-dd")}</td>
                 <td>${koordynator.nrTelefonu}</td>
                 <td>${koordynator.miasto}</td>
-                <td>${koordynator.ulica}</td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-    <form:form action="/admin/koordynatorzy/edycja" method="POST" modelAttribute="koordynator_edycja">
-        <form:select path="koordynator">
-            <form:options items="${koordynatorzy}"/>
-        </form:select>
+    <form action="/admin/koordynatorzy/edycja" method="POST">
+        <select name="idkoord">
+            <c:forEach var="koordynator" items="${koordynatorzy}">
+                <option value="${koordynator.idKoordynatora}">${koordynator.nazwisko} ${koordynator.imie}</option>
+            </c:forEach>
+        </select>
         <input type="submit" value="Edytuj dane koordynatora"/>
-    </form:form>
+    </form>
             <%--<c:forEach var="koord" items="${koordynatorzy}">
                 <option value="${koord}">
                     ${koord.nazwisko} ${koord.imie}

@@ -1,6 +1,6 @@
-package com.example;
+package com.example.main.webapp;
 
-import com.example.models.Podopieczny;
+import com.example.main.webapp.models.Podopieczny;
 
 /**
  * Created by Tomek on 28.03.2017.

@@ -7,7 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-      <!DOCTYPE HTML>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
       <html lang="pl">
       <head>
         <meta charset="utf-8" />
@@ -26,12 +27,12 @@
         </div>
 
         <div id="menu">
-          <a href="${pageContext.request.contextPath}/resources/html/index.html"><div class="option">Strona główna</div></a>
-          <a href="${pageContext.request.contextPath}/resources/html/o_nas.html"><div class="option">O nas</div></a>
-          <a href="${pageContext.request.contextPath}/resources/html/wolontariusze.html"><div class="option">Wolontariusze</div></a>
-          <a href="${pageContext.request.contextPath}/resources/html/podopieczni.html"><div class="option">Podopieczni</div></a>
-          <a href="${pageContext.request.contextPath}/resources/html/kontakt.html"><div class="option">Kontakt</div></a>
-          <a href="${pageContext.request.contextPath}/resources/html/logowanie.html"><div class="option">Logowanie</div></a>
+          <a href='<c:url value="/"/>'><div class="option">Strona główna</div></a>
+          <a href='<c:url value="/o_nas"/>'><div class="option">O nas</div></a>
+          <a href='<c:url value="/wolontariusze"/>'><div class="option">Wolontariusze</div></a>
+          <a href='<c:url value="/podopieczni"/>'><div class="option">Podopieczni</div></a>
+          <a href='<c:url value="/kontakt"/>'><div class="option">Kontakt</div></a>
+          <a href='<c:url value="/logowanie"/>'><div class="option">Logowanie</div></a>
           <div style="clear:both;"></div>
         </div>
 
@@ -49,12 +50,12 @@
         </div>
 
         <div id="sidebar">
-          <a href="index.html" style="color: black; text-decoration: none"><div class="optionL">Strona główna</div></a>
-          <a href="index.html" style="color: black; text-decoration: none"><div class="optionL">O nas</div></a>
-          <a href="wolontariusze.html" style="color: black; text-decoration: none"><div class="optionL">Wolontariusze</div></a>
-          <a href="podopieczni.html" style="color: black; text-decoration: none"><div class="optionL">Podopieczni</div></a>
-          <a href="kontakt.html" style="color: black; text-decoration: none"><div class="optionL">Kontakt</div></a>
-          <div class="optionL">Logowanie</div>
+          <a href='<c:url value="/"/>' style="color: black; text-decoration: none"><div class="optionL">Strona główna</div></a>
+          <a href='<c:url value="/o_nas"/>' style="color: black; text-decoration: none"><div class="optionL">O nas</div></a>
+          <a href='<c:url value="/wolontariusze"/>' style="color: black; text-decoration: none"><div class="optionL">Wolontariusze</div></a>
+          <a href='<c:url value="/podopieczni"/>' style="color: black; text-decoration: none"><div class="optionL">Podopieczni</div></a>
+          <a href='<c:url value="/kontakt"/>' style="color: black; text-decoration: none"><div class="optionL">Kontakt</div></a>
+          <a href='<c:url value="/logowanie"/>' style="color: black; text-decoration: none"><div class="optionL">Logowanie</div></a>
         </div>
 
         <div id="content">

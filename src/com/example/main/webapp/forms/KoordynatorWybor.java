@@ -1,6 +1,6 @@
-package com.example.forms;
+package com.example.main.webapp.forms;
 
-import com.example.models.Koordynator;
+import com.example.main.webapp.models.Koordynator;
 
 /**
  * Created by Tomek on 16.04.2017.

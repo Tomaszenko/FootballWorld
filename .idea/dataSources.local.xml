@@ -9,9 +9,7 @@
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>tomasz_nastaly</user-name>
-      <introspection-schemas>*:TOMASZ_NASTALY</introspection-schemas>
       <resolve-scope>*:PUBLIC,TOMASZ_NASTALY</resolve-scope>
-      <unqualified-resolve-schemas>*:PUBLIC,TOMASZ_NASTALY</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>

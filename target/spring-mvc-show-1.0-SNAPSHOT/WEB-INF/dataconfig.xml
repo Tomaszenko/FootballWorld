@@ -16,11 +16,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="podopiecznyDAO" class="com.example.PodopiecznyDAOImpl">
+    <bean id="podopiecznyDAO" class="com.example.main.webapp.PodopiecznyDAOImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 
-    <bean id="adminDAO" class="com.example.AdminDAOImpl">
+    <bean id="adminDAO" class="com.example.main.webapp.AdminDAOImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 </beans>

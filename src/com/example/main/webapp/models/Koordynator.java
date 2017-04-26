@@ -1,6 +1,6 @@
-package com.example.models;
+package com.example.main.webapp.models;
 
-import org.joda.time.DateTime;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -11,11 +11,13 @@ public class Koordynator {
     private int idKoordynatora;
     private String imie;
     private String nazwisko;
-    private DateTime data_urodzenia;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data_urodzenia;
     private String ulica;
     private String miasto;
     private int nrTelefonu;
-    private DateTime data_szkolenia;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data_szkolenia;
     private String haslo;
 
     public Koordynator() {
@@ -45,20 +47,20 @@ public class Koordynator {
         this.nazwisko = nazwisko;
     }
 
-    public DateTime getData_urodzenia() {
+    public Date getData_urodzenia() {
         return data_urodzenia;
     }
 
     public void setData_urodzenia(Date data_urodzenia) {
-        this.data_urodzenia = new DateTime(data_urodzenia);
+        this.data_urodzenia = data_urodzenia;
     }
 
-    public DateTime getData_szkolenia() {
+    public Date getData_szkolenia() {
         return data_szkolenia;
     }
 
     public void setData_szkolenia(Date data_szkolenia) {
-        this.data_szkolenia = new DateTime(data_szkolenia);
+        this.data_szkolenia = data_szkolenia;
     }
 
     public String getMiasto() {

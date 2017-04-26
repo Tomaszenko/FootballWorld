@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.main.webapp.models;
 
 /**
  * Created by Tomek on 14.04.2017.

@@ -1,6 +1,6 @@
-package com.example;
+package com.example.main.webapp;
 
-import com.example.models.Podopieczny;
+import com.example.main.webapp.models.Podopieczny;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
